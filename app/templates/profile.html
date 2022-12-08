@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+<div class="container bg-light">
+  <div class="row ">
+    <div>
+    </div>
+    <div class="col-6">
+      <img class="card-img-top" src={{personaje_data.image_url}} alt="">
+    </div>
+    <div class="col-6">
+      <div class="card-body m-3">
+          <h1 class="text-info display-1"><b>{{personaje_data.name}}</b></h1>
+          <hr>
+          <h2 >
+            <b class="text-danger">Status:</b> {{personaje_data.alive}}
+          </h2>
+          <h2 >
+            <b class="text-danger">Species:</b> {{personaje_data.species}}
+          </h2>
+          <h2 >
+            <b class="text-danger">Type:</b> {{ 'Alive' if personaje_data.typo else 'Dead' }}
+          </h2>
+          <h2 >
+            <b class="text-danger">Gender:</b> {{personaje_data.gender}}
+          </h2>
+          <h2 >
+            <b class="text-danger">Origin:</b> {{personaje_data.origin}}
+          </h2>
+          <h2 >
+            <b class="text-danger">Location:</b> {{personaje_data.location_name}}
+          </h2>
+          <h2 >
+            <b class="text-danger">First Seen:</b> {{personaje_data.episode}}
+          </h2>
+          <h2 >
+            <b class="text-danger">Episode name:</b> {{personaje_data.episode}}
+          </h2>
+          <h2 >
+            <b class="text-danger">Episode number:</b> {{personaje_data.episode_n|length}}
+          </h2>
+          <h2 >
+            <b class="text-danger">Created at:</b> {{personaje_data.created}}
+          </h2>
+          
+      </div>
+      <div class="d-grid gap-2">
+        <a href="{{url_for('personaje_router.index')}}" class="btn btn-primary m-3"><h2>Regresar a lista de personajes</h2></a>
+      </div>
+    </div>
+  </div>
+</div>
+      
+     
+{% endblock %}
